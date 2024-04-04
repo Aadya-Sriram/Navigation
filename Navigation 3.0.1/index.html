@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Navigation</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+  <link rel="apple-touch-icon" href="./assets/map (1).png">
+  <link rel="icon" href="/assets/map (1).png">
+  <meta name="apple-mobile-web-app-title" content="Navigation">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="manifest" href="manifest.json">
+  <style>
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+    }
+
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <script
+    src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.js"></script>
+  <link rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.css"
+    type="text/css">
+  <div style="width: 88%;border-radius: 20px;" id="map"></div>
+  <iframe style="width: 100px;margin-left: 87%;" src="./speed.html" frameborder="0"></iframe>
+  <iframe style="width: 100px;margin-left: 87%;" src="./compass.html" frameborder="0"></iframe>
+  <a href="app.html" style="width: 100px; margin-left: 87%;"><img src="./assets/app (1).png" alt="All apps"  style="width: 100px;"></a>
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYWFhcHBwc3NzIiwiYSI6ImNsNmowOXpsZzE1c2QzanA4N2FucGxmaGYifQ.Y13J75yJFRhoSiFNNiarxA';
+    const map = new mapboxgl.Map({
+      container: 'map',
+      // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+      style: 'mapbox://styles/mapbox/streets-v12',
+      center: [77.5946, 12.9716],
+      zoom: 13
+    });
+
+
+    map.addControl(
+      new MapboxDirections({
+        accessToken: mapboxgl.accessToken,
+        annotations:'maxspeed',
+        steps:true,
+        banner_instructions:true,
+        
+      }),
+      'top-left'
+    );
+    map.addControl(
+      new mapboxgl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true
+        },
+        // When active the map will receive updates to the device's location as it changes.
+        trackUserLocation: true,
+        // Draw an arrow next to the location dot to indicate which direction the device is heading.
+        showUserHeading: true
+      })
+    );
+    new mapboxgl.NavigationControl();
+    
+
+  </script>
+  <!--    --><!--    --><!--    --><!--    --><!--    -->
+  <!-- HTML !-->
+
+
+  <style>
+    *{
+
+         overflow:none;
+    }
+    .mapbox-directions-instructions {
+      color: aqua;
+    }
+
+    .button-40 {
+      background-color: #111827;
+      border: 1px solid transparent;
+      border-radius: .75rem;
+      box-sizing: border-box;
+      color: #FFFFFF;
+      cursor: pointer;
+      flex: 0 0 auto;
+      font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-size: 1.125rem;
+      font-weight: 600;
+      line-height: 1.5rem;
+      padding: .75rem 1.2rem;
+      text-align: center;
+      text-decoration: none #6B7280 solid;
+      text-decoration-thickness: auto;
+      transition-duration: .2s;
+      transition-property: background-color, border-color, color, fill, stroke;
+      transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      width: auto;
+    }
+
+    .button-40:hover {
+      background-color: #374151;
+    }
+
+    .button-40:focus {
+      box-shadow: none;
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+    }
+
+    @media (min-width: 768px) {
+      .button-40 {
+        padding: .75rem 1.5rem;
+      }
+    }
+  </style>
+  <!--    --><!--    --><!--    --><!--    --><!--    -->
+
+</body>
+
+</html>

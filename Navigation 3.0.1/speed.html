@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>speed</title>
+    <meta name="description"
+        content=" HI" />
+    <meta name="keywords"
+        content="HI">
+    <link rel="canonical" href="https://speedometer.live" />
+
+    <link rel="preload" href="https://speedometer.live/assets/font/digital-display.ttf" as="font" type="font/ttf"
+        crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3450488971894836"
+        crossorigin="anonymous"></script>
+
+
+    <style>
+        * {
+            text-align: center;
+            overflow: none;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        body{
+            color: #fff;
+        }
+        .speedometer-controls__start {
+            appearance: none;
+            background-color: #2ea44f;
+            border: 1px solid rgba(27, 31, 35, .15);
+            border-radius: 6px;
+            box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+            box-sizing: border-box;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+            padding: 6px 16px;
+            position: relative;
+            text-align: center;
+            text-decoration: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+
+        .button-3:focus:not(:focus-visible):not(.focus-visible) {
+            box-shadow: none;
+            outline: none;
+        }
+
+        .button-3:hover {
+            background-color: #2c974b;
+        }
+
+        .button-3:focus {
+            box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+            outline: none;
+        }
+
+        .button-3:disabled {
+            background-color: #94d3a2;
+            border-color: rgba(27, 31, 35, .1);
+            color: rgba(255, 255, 255, .8);
+            cursor: default;
+        }
+
+        .button-3:active {
+            background-color: #298e46;
+            box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+        }
+    </style>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-69XLK32YVK');
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header__margin"></div>
+        <header class="header">
+            <div class="header__container">
+                <div class="header__row">
+                    <div class="header__col header__col_1">
+                        <div class="header-burger">
+                            <div class="header-burger__line"></div>
+                        </div>
+                    </div>
+                    <div class="header__col header__col_2">
+                        <div class="header__logo">
+
+                        </div>
+                    </div>
+                </div>
+        </header>
+        <div class="header__backdrop"></div>
+        <main class="page">
+            <div class="speedometer">
+                <div class="speedometer__container">
+                    <div data-tabs class="speedometer__row">
+                        <div class="speedometer__col speedometer__col_1">
+                            <nav data-tabs-titles class="speedometer-tabs__navigation">
+                                <button type="button" id="tab-button-analog"
+                                    class="speedometer-tabs__title _tab-active"style="display: none;">
+                                     </button>     
+                        </div>
+                        <div class="speedometer__col speedometer__col_2">
+                            <div class="speedometer-tabs">
+                                <div data-tabs-body class="speedometer-tabs__content">
+                                    <div class="speedometer-tabs__body">
+                                        <div class="speedometer-analog">
+                                            <div class="speedometer-analog__dial dial">
+                                                <div class="dial__circle"></div>
+                                                <div id="needle" class="dial__arrow">
+                                                </div>
+
+                                            </div>
+                                            <div style="font-size: 50px;" class="speedometer-analog__title readout">0
+                                            </div>
+                                            <div class="speedometer-analog__subtitle">km/h</div>
+                                        </div>
+                                    </div>
+                                    <div class="speedometer-tabs__body">
+                                        <div class="speedometer-digital">
+                                            <div class="speedometer-digital__title readout"></div>
+                                            <div class="speedometer-digital__subtitle"style="display:none;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="speedometer__col speedometer__col_3">
+                            <div class="speedometer-controls" style="display: none;">
+                                <div class="speedometer-controls__row" id="readoutUnits">
+                                    <div class="speedometer-controls__btn" id="show-ms" data-subtitle="meter/s">
+                                        meter/second</div>
+                                    <div class="speedometer-controls__btn" id="show-mph" data-subtitle="m/h">miles/hour
+                                    </div>
+                                    <div class="speedometer-controls__btn _active" id="show-kmh" data-subtitle="km/h">
+                                        km/hour</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="speedometer-controls__start" id="start">Start</div>
+                </div>
+            </div>
+    </div>
+
+    <script>
+        let btn_text = {
+            start: 'Start',
+            stop: 'Stop'
+        };
+    </script>
+
+    <script defer src="https://speedometer.live/assets/js/speedometer.js"></script>
+    <script async src="https://static.addtoany.com/menu/page.js" defer></script>
+    <script>
+        var acc = document.getElementsByClassName("myaccordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("myactive");
+                var mypanel = this.nextElementSibling;
+                if (mypanel.style.maxHeight) {
+                    mypanel.style.maxHeight = null;
+                } else {
+                    mypanel.style.maxHeight = mypanel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+    <!-- important -aadya-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ 
+    <script src="https://speedometer.live/assets/js/link-share.js"></script>
+    <style>
+      
+    </style>
+</body>
+
+</html>
